@@ -108,10 +108,10 @@ echo "Recorrido del array escalar mediante while<br>";
 
 echo "<br>";
 
-$a = "";
-while($a < count($productos2)){
-   echo $productos2[$a] ."<br>";
-   $a++;
+
+while(list(,$value) = each($productos2)){
+   echo $value ."<br>";
+  
 }
 
 echo "<br>";
@@ -123,5 +123,34 @@ echo "<br>";
 foreach ($productos2 as $valor){
     echo $valor ."<br>";
 }
+
+/*
+ * Realizar:
+ *  
+ * i) Recorrido del array bidimensional mediante el uso de variables.
+ * 
+ *j) Recorrido del array bidimensional usando un bucle while y un bucle for.
+ *
+ * k) Recorrido del array bidimensional mediante el uso de dos for.
+ * 
+ * l) Recorrido del array bidimensional mediante el uso de dos foreach.
+ * 
+ */
+
+echo "<br>";
+
+echo "Ejercicio 3. Array bidimensional escalar.<br>";
+
+$animales = array(array("Perro","Mastin", 100 ),//00-01-02
+array("Gato","Persa", 150 ),//10-11-12
+array("Gato","Siames", 190 ),//20-21-22
+array("Perro","Boxer", 25 ), //30-31-32
+array("Canario","Timbrado", 250 ));//40-41-42
+
+print_r($animales);
+
+echo "<br>";
+
+echo "<br>";
 
 ?>
