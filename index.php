@@ -153,4 +153,40 @@ echo "<br>";
 
 echo "<br>";
 
+
+echo "Recorrido del array mediante variables<br>";
+
+echo "<br>";
+
+echo $animales[0][0] ." ";
+echo $animales[0][1] ." ";
+echo $animales[0][2] ."<br>";
+
+echo $animales[1][0] ." ";
+echo $animales[1][1] ." ";
+echo $animales[1][2] ."<br>";
+
+echo $animales[2][0] ." ";
+echo $animales[2][1] ." ";
+echo $animales[2][2] ."<br>";
+
+echo $animales[3][0] ." ";
+echo $animales[3][1] ." ";
+echo $animales[3][2] ."<br>";
+
+echo $animales[3][0] ." ";
+echo $animales[3][1] ." ";
+echo $animales[3][2] ."<br>";
+
+echo "<br>";
+
+echo "Recorrido del array mediante while y for<br>";
+
+echo "<br>";
+
+for($d = 0; $d < count($animales); $d++){
+    while(list($key,$value) = each($animales)){
+        echo $key . $value . "<br>";
+    }
+}
 ?>
