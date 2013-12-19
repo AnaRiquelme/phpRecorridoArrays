@@ -174,9 +174,9 @@ echo $animales[3][0] ." ";
 echo $animales[3][1] ." ";
 echo $animales[3][2] ."<br>";
 
-echo $animales[3][0] ." ";
-echo $animales[3][1] ." ";
-echo $animales[3][2] ."<br>";
+echo $animales[4][0] ." ";
+echo $animales[4][1] ." ";
+echo $animales[4][2] ."<br>";
 
 echo "<br>";
 
@@ -184,9 +184,37 @@ echo "Recorrido del array mediante while y for<br>";
 
 echo "<br>";
 
+$c=0;
+
 for($d = 0; $d < count($animales); $d++){
-    while(list($key,$value) = each($animales)){
-        echo $key . $value . "<br>";
+    while($c < count($animales)){
+         echo $animales[$d][$c] . " ";
+         $c++;
+    }
+    echo "<br>";
+    $c=0;
+}
+
+echo "<br>";
+
+echo "Recorrido del array mediante dos for<br>";
+
+echo "<br>";
+
+for($e = 0; $e < count($animales); $e++){
+    for($f = 0; $f < count($animales); $f++){
+        echo $animales[$e][$f] . "<br>";
     }
 }
+
+echo "<br>";
+
+echo "Recorrido del array mediante dos foreach<br>";
+
+echo "<br>";
+
+//foreach (){
+//    
+//}
+
 ?>
