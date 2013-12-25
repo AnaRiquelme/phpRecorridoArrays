@@ -214,19 +214,17 @@ echo "<br>";
 
 foreach ($animales as $key => $value) {
     foreach ($value as $valor) {
-       echo $valor . " ";
+        echo $valor . " ";
     }
-      echo "<br>";
+    echo "<br>";
 }
 
 /*
- * Realizar:
+ * Realizar para las dos variables $productos1 y $productos2:
  *  
- * i) Recorrido del array bidimensional mediante el uso de variables.
+ * m) Recorrido mediante el uso de variables.
  * 
- * j) Recorrido del array bidimensional usando un bucle while y un bucle for.
- *
- * k) Recorrido del array bidimensional mediante el uso de dos for.
+ * j) Recorrido mediante un bucle while y un bucle for.
  * 
  * l) Recorrido del array bidimensional mediante el uso de dos foreach.
  * 
@@ -234,6 +232,103 @@ foreach ($animales as $key => $value) {
 
 echo "<br>";
 
-echo "Ejercicio 3. Array bidimensional escalar.<br>";
+echo "Ejercicio 4. Array bidimensional escalar.<br>";
+
+echo "<br>";
+
+$productos1 = array(array("Codigo" => "CB", "Descripcion" => "Cebollas", "Precio" => 100),
+    array("Codigo" => "AC", "Descripcion" => "Aceite", "Precio" => 120),
+    array("Codigo" => "MZ", "Descripcion" => "Manzanas", "Precio" => 92)
+);
+
+print_r($productos1);
+
+echo "<br>";
+
+echo "<br>";
+
+echo "<br>";
+
+$productos2 = array("prod1" => array("Codigo" => "CB", "Descripcion" => "Cebollas", "Precio" => 100),
+    "prod2" => array("Codigo" => "AC", "Descripcion" => "Aceite", "Precio" => 120),
+    "prod3" => array("Codigo" => "MZ", "Descripcion" => "Manzanas", "Precio" => 92)
+);
+
+print_r($productos2);
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+echo "<br>";
+
+
+echo "Recorrido del array mediante variables productos1<br>";
+
+echo "<br>";
+
+echo $productos1[0]["Codigo"] . " ";
+echo $productos1[0]["Descripcion"] . " ";
+echo $productos1[0]["Precio"] . "<br>";
+
+echo $productos1[1]["Codigo"] . " ";
+echo $productos1[1]["Descripcion"] . " ";
+echo $productos1[1]["Precio"] . "<br>";
+
+echo $productos1[2]["Codigo"] . " ";
+echo $productos1[2]["Descripcion"] . " ";
+echo $productos1[2]["Precio"] . "<br>";
+
+echo "<br>";
+
+echo "Productos2 <br>";
+
+echo "<br>";
+
+echo $productos2["prod1"]["Codigo"] . " ";
+echo $productos2["prod1"]["Descripcion"] . " ";
+echo $productos2["prod1"]["Precio"] . "<br>";
+
+echo $productos2["prod2"]["Codigo"] . " ";
+echo $productos2["prod2"]["Descripcion"] . " ";
+echo $productos2["prod2"]["Precio"] . "<br>";
+
+echo $productos2["prod3"]["Codigo"] . " ";
+echo $productos2["prod3"]["Descripcion"] . " ";
+echo $productos2["prod3"]["Precio"] . "<br>";
+
+echo "<br>";
+
+echo "Recorrido del array mediante while y for<br>";
+
+echo "<br>";
+
+for($g = 0; $g < count($productos1); $g++){
+    while (list($key,$valor)= each($productos1[$g])) {
+        echo $key . " " . $valor . " ";
+    }
+    echo "<br>";
+}
+    
+echo "<br>";
+
+echo "Productos 2<br>";
+
+echo "<br>";
+
+for($h = 0; $h < count($productos2); $h++){
+    while (list($indice,$valores)= each($productos2[$h])) {
+        echo $indice . " " . $valores . " ";
+    }
+    echo "<br>";
+}
+
+echo "<br>";
+
+echo "Recorrido del array bidimensional mediante el uso de dos foreach.";
+
+echo "<br>";
+
+
 
 ?>
