@@ -17,7 +17,9 @@
  * e)Recorrido del array anterior mediante el uso de foreach
  */
 
-echo "Ejercicio 1. Recorrido de arrays.<br>";
+echo "Ejercicio Recorrido de arrays.<br>";
+
+echo "ARRAY UNIDIMENSIONAL ESCALAR.<br>";
 
 $productos = array("MESA", "SILLA", "FLEXO", "ESTANTERIA");
 
@@ -87,7 +89,7 @@ foreach ($productos as $valor) {
 
 echo "<br>";
 
-echo "Ejercicio 2. Recorrido de array unidimensional asociativas.<br>";
+echo "ARRAY UNIDIMENSIONAL ASOCIATIVO.<br>";
 
 $productos2 = array("M" => "MESA", "S" => "SILLA", "F" => "FLEXO", "E" => "ESTANTERIA");
 
@@ -138,7 +140,7 @@ foreach ($productos2 as $valor) {
 
 echo "<br>";
 
-echo "Ejercicio 3. Array bidimensional escalar.<br>";
+echo "ARRAY BIDIMENSIONAL ESCALAR(Indexado numéricamente).<br>";
 
 $animales = array(array("Perro", "Mastin", 100), //00-01-02
     array("Gato", "Persa", 150), //10-11-12
@@ -232,7 +234,7 @@ foreach ($animales as $key => $value) {
 
 echo "<br>";
 
-echo "Ejercicio 4. Array bidimensional escalar.<br>";
+echo "ARRAY BIDIMENSIONAL ASOCIATIVO.<br>";
 
 echo "<br>";
 
@@ -303,39 +305,117 @@ echo "Recorrido del array mediante while y for<br>";
 
 echo "<br>";
 
-for($g = 0; $g < count($productos1); $g++){
-    while (list($key,$valor)= each($productos1[$g])) {
+for ($g = 0; $g < count($productos1); $g++) {
+    while (list($key, $valor) = each($productos1[$g])) {
         echo $key . " " . $valor . " ";
     }
     echo "<br>";
 }
-    
+
 echo "<br>";
 
 echo "Productos 2<br>";
 
 echo "<br>";
 
-   while (list($indice,$valores)= each($productos3)) {
-      echo $indice . " ";
-      for($h = 0; $h < count($valores); $h++){
-        list(,$value)= each($valores); 
-        echo $value . " " ;  
-    }
-     echo "<br>" ;
-}
-
-echo "<br>";
-
-echo "Recorrido del array bidimensional mediante el uso de dos foreach.";
-
-echo "<br>";
-
-foreach ($productos3 as $clave => $value1) {
-    foreach ($value1 as $valor2) {
-        echo $valor2 . " ";
+while (list($indice, $valores) = each($productos3)) {
+    echo $indice . " ";
+    for ($h = 0; $h < count($valores); $h++) {
+        list(, $value) = each($valores);
+        echo $value . " ";
     }
     echo "<br>";
 }
 
+echo "<br>";
+
+echo "Recorrido del array bidimensional mediante el uso de dos foreach.<br>";
+
+echo "<br>";
+
+foreach ($productos1 as $clave => $value1) {
+    echo $clave . " ";
+    foreach ($value1 as $clave1 => $valor2) {
+        echo $clave1 . " " . $valor2 . " ";
+    }
+    echo "<br>";
+}
+
+echo "<br>";
+
+echo "Productos2.<br>";
+
+echo "<br>";
+
+foreach ($productos3 as $clave3 => $value2) {
+    echo $clave3 . " ";
+    foreach ($value2 as $clave4 => $valor3) {
+        echo $clave4 . " " . $valor3 . " ";
+    }
+    echo "<br>";
+}
+
+/*
+ * Crear una array tridimensional asociativo 
+ * a vuestro gusto de 3 filas x 3 columnas, llamado $tri
+ * 
+ * Realizar:
+ *  
+ * p) Recorrido mediante el uso de variables.
+ * 
+ * q) Recorrido del array tridimensional mediante el uso de tres foreach.
+ * 
+ */
+
+echo "<br>";
+
+echo "ARRAY TRIDIMENSIONAL ASOCIATIVO.<br>";
+
+echo "<br>";
+
+$tri = array(
+    "fruta" => array(
+        "naranja" => array(
+            "vitamina" => "C", "color" => "naranja"),
+        "kiwi" => array(
+            "vitamina" => "C", "color" => "marron"),
+        "mandarina" => array(
+            "vitamina" => "A", "color" => "naranja")
+    )
+);
+
+print_r($tri);
+
+
+echo "<br>";
+echo "<br>";
+
+echo "Recorrido del array tridimensional mediante variables<br>";
+
+echo "<br>";
+
+echo $tri["fruta"]["naranja"]["vitamina"] . " ";
+echo $tri["fruta"]["naranja"]["color"] . "<br>";
+
+echo $tri["fruta"]["kiwi"]["vitamina"] . " ";
+echo $tri["fruta"]["kiwi"]["color"] . "<br>";
+
+echo $tri["fruta"]["mandarina"]["vitamina"] . " ";
+echo $tri["fruta"]["mandarina"]["color"] . "<br>";
+
+echo "<br>";
+
+echo "Recorrido del array tridimensional mediante tres foreach<br>";
+
+echo "<br>";
+
+foreach ($tri as $key1 => $resultado) {
+    foreach ($resultado as $key2 => $resultado1) {
+         foreach ($resultado1 as $resultado2){
+            echo $resultado2 . " "; 
+         }
+             echo "<br>";
+    }
+
+}
 ?>
