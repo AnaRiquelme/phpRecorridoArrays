@@ -249,12 +249,12 @@ echo "<br>";
 
 echo "<br>";
 
-$productos2 = array("prod1" => array("Codigo" => "CB", "Descripcion" => "Cebollas", "Precio" => 100),
+$productos3 = array("prod1" => array("Codigo" => "CB", "Descripcion" => "Cebollas", "Precio" => 100),
     "prod2" => array("Codigo" => "AC", "Descripcion" => "Aceite", "Precio" => 120),
     "prod3" => array("Codigo" => "MZ", "Descripcion" => "Manzanas", "Precio" => 92)
 );
 
-print_r($productos2);
+print_r($productos3);
 
 echo "<br>";
 echo "<br>";
@@ -285,17 +285,17 @@ echo "Productos2 <br>";
 
 echo "<br>";
 
-echo $productos2["prod1"]["Codigo"] . " ";
-echo $productos2["prod1"]["Descripcion"] . " ";
-echo $productos2["prod1"]["Precio"] . "<br>";
+echo $productos3["prod1"]["Codigo"] . " ";
+echo $productos3["prod1"]["Descripcion"] . " ";
+echo $productos3["prod1"]["Precio"] . "<br>";
 
-echo $productos2["prod2"]["Codigo"] . " ";
-echo $productos2["prod2"]["Descripcion"] . " ";
-echo $productos2["prod2"]["Precio"] . "<br>";
+echo $productos3["prod2"]["Codigo"] . " ";
+echo $productos3["prod2"]["Descripcion"] . " ";
+echo $productos3["prod2"]["Precio"] . "<br>";
 
-echo $productos2["prod3"]["Codigo"] . " ";
-echo $productos2["prod3"]["Descripcion"] . " ";
-echo $productos2["prod3"]["Precio"] . "<br>";
+echo $productos3["prod3"]["Codigo"] . " ";
+echo $productos3["prod3"]["Descripcion"] . " ";
+echo $productos3["prod3"]["Precio"] . "<br>";
 
 echo "<br>";
 
@@ -316,11 +316,13 @@ echo "Productos 2<br>";
 
 echo "<br>";
 
-for($h = 0; $h < count($productos2); $h++){
-    while (list($indice,$valores)= each($productos2[$h])) {
-        echo $indice . " " . $valores . " ";
+   while (list($indice,$valores)= each($productos3)) {
+      echo $indice . " ";
+      for($h = 0; $h < count($valores); $h++){
+        list(,$value)= each($valores); 
+        echo $value . " " ;  
     }
-    echo "<br>";
+     echo "<br>" ;
 }
 
 echo "<br>";
@@ -329,6 +331,11 @@ echo "Recorrido del array bidimensional mediante el uso de dos foreach.";
 
 echo "<br>";
 
-
+foreach ($productos3 as $clave => $value1) {
+    foreach ($value1 as $valor2) {
+        echo $valor2 . " ";
+    }
+    echo "<br>";
+}
 
 ?>
